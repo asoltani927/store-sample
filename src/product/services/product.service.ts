@@ -8,15 +8,15 @@ import { UpdateProductDto } from '../dto/update-product.dto';
 @Injectable()
 export class ProductService {
   constructor(
-    @InjectRepository(Product)
-    private productRepository: Repository<Product>,
+    // @InjectRepository(Product)
+    // private productRepository: Repository<Product>,
   ) {}
 
   create(createProductDto: CreateProductDto) {
-    return this.productRepository.create({
-      id: 
-      ...createProductDto,
-    });
+    // return this.productRepository.create({
+    //   id: 
+    //   ...createProductDto,
+    // });
   }
 
   findAll() {
@@ -24,7 +24,7 @@ export class ProductService {
   }
 
   findOne(id: number) {
-    return this.productRepository.findOne({ id });
+    // return this.productRepository.findOne({ id });
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {

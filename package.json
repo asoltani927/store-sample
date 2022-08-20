@@ -29,6 +29,7 @@
     "@nestjs/swagger": "^6.0.5",
     "@nestjs/typeorm": "^9.0.1",
     "@nestjsi/class-validator": "^0.2.2",
+    "class-transformer": "^0.5.1",
     "mysql2": "^2.3.3",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
