@@ -8,30 +8,36 @@ import { UpdateProductDto } from '../dto/update-product.dto';
 @Injectable()
 export class ProductService {
   constructor(
-    // @InjectRepository(Product)
-    // private productRepository: Repository<Product>,
+    @InjectRepository(Product)
+    private productRepository: Repository<Product>,
   ) {}
 
   create(createProductDto: CreateProductDto) {
-    // return this.productRepository.create({
-    //   id: 
-    //   ...createProductDto,
-    // });
+    return this.productRepository.insert({
+      ...createProductDto,
+    });
   }
 
   findAll() {
     return this.productRepository.find();
   }
 
-  findOne(id: number) {
-    // return this.productRepository.findOne({ id });
+  findOne(id) {
+    return this.productRepository.findOne({
+      where: {
+        id,
+      },
+    });
   }
 
   update(id: number, updateProductDto: UpdateProductDto) {
-    return `This action updates a #${id} product`;
+    return this.productRepository.save({
+      id,
+      ...updateProductDto,
+    });
   }
 
   remove(id: number) {
-    return `This action removes a #${id} product`;
+    return this.productRepository.delete(id);
   }
 }
